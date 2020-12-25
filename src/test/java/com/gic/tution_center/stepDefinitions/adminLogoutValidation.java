@@ -69,7 +69,6 @@ public class adminLogoutValidation extends CommonFunctions {
         String loginPageText = "Please login with your email/username and password below.";
         //Assert.assertEquals(Constants.loginURL, driver.getCurrentUrl());
         Assert.assertEquals(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h4[1]/span[1]")).getText(), loginPageText);
-        closeBrowser();
         }
 
     //Admin user logout using keyboard
@@ -119,7 +118,6 @@ public class adminLogoutValidation extends CommonFunctions {
     public void i_should_be_logged_out_from_admin_and_back_to_login_page()   {
         String loginPageText = "Please login with your email/username and password below.";
         Assert.assertEquals(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h4[1]/span[1]")).getText(), loginPageText);
-        closeBrowser();
     }
 }
 

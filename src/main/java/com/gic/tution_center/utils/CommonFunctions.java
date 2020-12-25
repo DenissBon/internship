@@ -21,7 +21,7 @@ public class CommonFunctions {
     }
 
     public void closeBrowser() {
-        //driver.quit();
+        driver.quit();
     }
 
     public void implicitWait(int waitTime) {

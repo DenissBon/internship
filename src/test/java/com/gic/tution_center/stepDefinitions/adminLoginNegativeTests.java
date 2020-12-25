@@ -29,7 +29,6 @@ public class adminLoginNegativeTests extends CommonFunctions {
     public void one_login_should_fail_with_messages(String usernameRequired, String passwordRequired)   {
         Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'The Email/Username field is required.')]")).getText(),usernameRequired);
         Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'The Password field is required.')]")).getText(), passwordRequired);
-        closeBrowser();
     }
 
     //Username field blank and password field entered
@@ -54,7 +53,6 @@ public class adminLoginNegativeTests extends CommonFunctions {
     @Then("^two login should fail with message <\"(.*?)\">$")
     public void two_login_should_fail_with_message(String usernameRequired)   {
          Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'The Email/Username field is required.')]")).getText(), usernameRequired);
-         closeBrowser();
     }
 
     //Valid username and password field blank
@@ -80,7 +78,6 @@ public class adminLoginNegativeTests extends CommonFunctions {
     @Then("^three login should fail with message <\"(.*?)\">$")
     public void three_login_should_fail_with_message(String passwordRequired)   {
          Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'The Password field is required.')]")).getText(),passwordRequired);
-         closeBrowser();
     }
 
     //Login with un-registered username and password
@@ -107,7 +104,6 @@ public class adminLoginNegativeTests extends CommonFunctions {
     @Then("^four login should fail with message <\"(.*?)\">$")
     public void four_login_should_fail_with_message(String errorMessage)   {
          Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'Incorrect Login')]")).getText(), errorMessage);
-         closeBrowser();
     }
 
     // Valid admin username and invalid password
@@ -134,7 +130,6 @@ public class adminLoginNegativeTests extends CommonFunctions {
     @Then("^five login should fail with message <\"(.*?)\">$")
     public void five_login_should_fail_with_message(String errorMessage)   {
          Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'Incorrect Login')]")).getText(), errorMessage);
-         closeBrowser();
     }
 
 }

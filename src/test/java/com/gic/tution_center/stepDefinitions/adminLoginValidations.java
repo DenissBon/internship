@@ -41,7 +41,6 @@ public class adminLoginValidations extends CommonFunctions {
     public void i_should_be_in_application_dashboard_page() throws InterruptedException {
         implicitWait(10);
         Assert.assertTrue(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]")).isDisplayed());
-        closeBrowser();
     }
 
 }

@@ -17,6 +17,9 @@ public class LoginPage {
     @FindBy (xpath = "//body/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/form[1]/div[4]/div[1]/input[1]")
     WebElement loginBtn;
 
+    @FindBy (xpath = "//a[@class='btn-lg btn btn-link']")
+    WebElement forgotPassword;
+
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -33,4 +36,10 @@ public class LoginPage {
     public void submitLoginDetails() {
         loginBtn.click();
     }
+
+    public void forgotPasswordLink(){
+        forgotPassword.click();
+
+    }
 }
+

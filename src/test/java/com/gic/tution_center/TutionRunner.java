@@ -8,12 +8,12 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = ".",
-        tags = {"~@login"},
+        tags = {"@RememberMeChecked"},
         dryRun = false)
 
-        //tags = {"@AdminLogin, @AdminLogout, @AdminLogoutKeyboard"},
-        //tags = {"@BlankUsernamePassword   @BlankUsername  @BlankPassword  @UnregisteredUsername  @IncorrectAdminPassword"},
-
+        // @RememberMeUnchecked     @AdminLogin,    @AdminLogout,   @AdminLogoutKeyboard    ~@login
+        // @BlankUsernamePassword   @BlankUsername  @BlankPassword  @UnregisteredUsername
+        // @IncorrectAdminPassword  @RecoverPasswordUnRegEmail      @RememberMeChecked
 
 public class TutionRunner {
 
