@@ -1,4 +1,4 @@
-package com.gic.tution_center.stepdefinitions;
+package com.gic.tution_center.stepDefinitions;
 
 import com.gic.tution_center.pageFactory.LoginPage;
 import com.gic.tution_center.utils.Constants;
@@ -7,7 +7,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
