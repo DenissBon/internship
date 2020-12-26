@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = ".",
+        features = "C:\\Users\\DVoro\\tution-center\\src\\test\\java\\com\\gic\\tution_center\\features\\addstudent.feature",
         tags = {},
         dryRun = false)
 
