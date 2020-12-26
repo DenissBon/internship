@@ -15,7 +15,7 @@ public class CommonFunctions {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         //WebDriverManager.firefoxdriver().setup();
         //driver = new FirefoxDriver();
     }
