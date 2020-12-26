@@ -8,11 +8,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = ".",
-        tags = {"~@login"},
+        tags = {},
         dryRun = false)
-
-        //tags = {"@AdminLogin, @AdminLogout, @AdminLogoutKeyboard"},
-        //tags = {"@BlankUsernamePassword   @BlankUsername  @BlankPassword  @UnregisteredUsername  @IncorrectAdminPassword"},
 
 
 public class TutionRunner {

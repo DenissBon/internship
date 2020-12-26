@@ -27,26 +27,9 @@ public class adminLogoutValidation extends CommonFunctions {
 
     }
 
-    @When("^i enter admin username as \"(.*?)\"$")
-    public void i_enter_admin_username_as(String username) {
-        loginPage.setUserName(username);
-    }
-
-    @When("^i enter admin password as \"(.*?)\"$")
-    public void i_enter_admin_password_as(String password)  {
-      loginPage.setPassword(password);
-      
-    }
-
-    @When("^i click login button$")
-    public void i_click_login_button()   {
-      loginPage.submitLoginDetails();
-      
-    }
-
-    @When("^i should see admin login page$")
+   @When("^i should see admin login page$")
     public void i_should_be_see_admin_login_page()   {
-        implicitWait(10);
+        //implicitWait(50);
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[4]/div/div/div/div/div[2]/div[2]")).isDisplayed());
       
     }
@@ -69,7 +52,6 @@ public class adminLogoutValidation extends CommonFunctions {
         String loginPageText = "Please login with your email/username and password below.";
         //Assert.assertEquals(Constants.loginURL, driver.getCurrentUrl());
         Assert.assertEquals(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h4[1]/span[1]")).getText(), loginPageText);
-        closeBrowser();
         }
 
     //Admin user logout using keyboard
@@ -87,18 +69,10 @@ public class adminLogoutValidation extends CommonFunctions {
 
     }
 
-    @When("^i click on login button$")
-    public void i_click_on_login_button()   {
-        loginPage.submitLoginDetails();
-
-    }
-
     @When("^i should see admin login page and i click avatar$")
     public void i_should_see_admin_login_page_and_i_click_avatar()  {
         implicitWait(20);
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[4]/div/div/div/div/div[2]/div[2]")).isDisplayed());
-        //  WebElement element = driver.findElement(By.cssSelector(".nav-avatar"));
-        // element.click();
         driver.findElement(By.xpath("//div[@class='nav-avatar']")).click();
         implicitWait(10);
 
@@ -119,7 +93,6 @@ public class adminLogoutValidation extends CommonFunctions {
     public void i_should_be_logged_out_from_admin_and_back_to_login_page()   {
         String loginPageText = "Please login with your email/username and password below.";
         Assert.assertEquals(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h4[1]/span[1]")).getText(), loginPageText);
-        closeBrowser();
     }
 }
 
