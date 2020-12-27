@@ -2,6 +2,7 @@ package com.gic.tution_center.stepdefinitions;
 
 
 import com.gic.tution_center.pageFactory.AddNewStudentPage;
+import com.gic.tution_center.pageFactory.AllStudentsPage;
 import com.gic.tution_center.pageFactory.DashboardPage;
 import com.gic.tution_center.pageFactory.LoginPage;
 import com.gic.tution_center.utils.CommonFunctions;
@@ -9,13 +10,16 @@ import com.gic.tution_center.utils.Constants;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.jsoup.select.Evaluator;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class AddStudent extends CommonFunctions {
 
     LoginPage loginPage = new LoginPage(driver);
     DashboardPage dashboardPage = new DashboardPage(driver);
     AddNewStudentPage addNewStudentPage = new AddNewStudentPage(driver);
+    AllStudentsPage allStudentsPage = new AllStudentsPage(driver);
 
     @Given("^I'm on LoginPage \"(.*?)\"$")
     public void i_m_on_LoginPage(String loginPageURL)  {
@@ -55,20 +59,36 @@ public class AddStudent extends CommonFunctions {
 
     }
 
-    @When("^I type in valid email address \"(.*?)\" along with mendetory fields$")
-    public void i_type_in_valid_email_address_along_with_mendetory_fields(String arg1)  {
+    @When("^I type in valid email address \"(.*?)\" along with mandatory fields$")
+    public void i_type_in_valid_email_address_along_with_mandatory_fields(String ValidEmail)  {
+
+        addNewStudentPage.Email.sendKeys(ValidEmail);
+        addNewStudentPage.EnterValidFirstName();
+        addNewStudentPage.EnterValidLastName();
+        addNewStudentPage.EnterValidPhone();
+        addNewStudentPage.EnterValidBirthDate();
+        addNewStudentPage.EnterValidPostCode();
+        addNewStudentPage.EnterValidAddress();
+        addNewStudentPage.EnterValidGuardiansFirstName();
+        addNewStudentPage.EnterValidGuardiansLastName();
+        addNewStudentPage.EnterValidGuardiansEmail();
+        addNewStudentPage.EnterValidGuardiansPhone();
+        addNewStudentPage.EnterValidHourlyFeesPeakHour();
+
 
     }
 
     @When("^I click Create Student$")
     public void i_click_Create_Student() {
-
+        addNewStudentPage.CreateStudentBtnClick();
+        dashboardPage.AllStudentsBtnClick();
     }
 
     @Then("^student record should be created successfully$")
     public void student_record_should_be_created_successfully()  {
 
-    }
+    Assert.assertTrue(allStudentsPage.AddedStudent.isDisplayed());
 
 
+}
 }

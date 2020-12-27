@@ -9,7 +9,7 @@ Feature: Add student
     And I click Login button
     And I click on Students
     And I click Add New Student
-    And I type in valid email address "Georgecane@gmail.com" along with mendetory fields
+    And I type in valid email address "Georgecane@gmail.com" along with mandatory fields
     And I click Create Student
     Then student record should be created successfully
 

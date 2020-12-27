@@ -14,96 +14,74 @@ public class AddNewStudentPage {
     }
 
 
-    @FindBy(xpath = "//*[@class='fas fa-plus']")
-    public WebElement AddNewTimeSlotBtn;
-
-    @FindBy(xpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]")
-    public WebElement DeleteTimeSlotBtn;
-
-    @FindBy(xpath = "//span[@id='select2-routine_id-u3-container']")
-    public WebElement NewSlot;
-
-    @FindBy(xpath = "//input[@id='email']")
-    public WebElement EmailField;
-
     @FindBy(xpath = "//button[contains(text(),'Create Student')]")
     public WebElement CreateStudentBtn;
-
-    @FindBy(xpath = "//em[@id='email-error']")
-    public WebElement InvalidEmailMsg;
-
-
-    @FindBy(css = "#select2-relation-container")
-    public WebElement RelationField;
-
-    @FindBy(xpath = "//body/span[1]/span[1]/span[1]/input[1]")
-    public WebElement RelationEntryField;
-
-    @FindBy(css = "#relation-error")
-    public WebElement InvalidRelationMsg;
-
-    @FindBy(xpath = "//input[@id='phone']")
-    public WebElement PhoneField;
-      public void AddTimeSlotBtnClick()
-    {
-        AddNewTimeSlotBtn.click();
-    }
-
-    public void DeleteTimeSlotBtnClick()
-    {
-        DeleteTimeSlotBtn.click();
-    }
-
-
-
-
-
-
-    public void EnterValidEmail()
-    {
-        EmailField.sendKeys("Georgecane@gmail.com");
-    }
-
-    public void EnterInvalidEmail()
-    {
-        EmailField.sendKeys("Georgecanegmail.com");
-    }
-
     public void CreateStudentBtnClick()
     {
         CreateStudentBtn.click();
     }
 
-    public void RelationFieldClick()
-    {
-        RelationField.click();
-    }
 
-    public void EnterValidRelation()
-    {
-        RelationEntryField.sendKeys("Brother");
-    }
-    public void EnterInvalidRelation() {
-        RelationEntryField.sendKeys("123456789");
-    }
-    public void PhoneFieldClick(){PhoneField.click();}
+//mandatory fields
 
-    @FindBy(xpath = "//em[@id='phone-error']")
-    public WebElement InvalidPhoneMsg;
+    @FindBy(xpath = "//input[@id='first_name']")
+    public WebElement FirstName;
 
-    public void PhoneFieldEnter()
-    {
-    PhoneField.sendKeys(Keys.ENTER);
-    }
+    @FindBy(xpath = "//input[@id='last_name']")
+    public WebElement LastName;
+
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement Email;
+
+    @FindBy(xpath = "//input[@id='phone']")
+    public WebElement Phone;
+
+    @FindBy(xpath = "//input[@id='dob']")
+    public WebElement BirthDate;
+
+    @FindBy(xpath = "//input[@id='post_code']")
+    public WebElement PostCode;
+
+    @FindBy(xpath = "//input[@id='address']")
+    public WebElement Address;
+
+    @FindBy(css = "#select2-relation-container")
+    public WebElement Relation;
+
+    @FindBy(xpath = "//body/span[1]/span[1]/span[1]/input[1]")
+    public WebElement RelationEntryField;
+
+    @FindBy(xpath = "//input[@id='guardian_first_name']")
+    public WebElement GuardiansFirstName;
+
+    @FindBy(xpath = "//input[@id='guardian_last_name']")
+    public WebElement GuardiansLastName;
+
+    @FindBy(xpath = "//input[@id='guardian_email']")
+    public WebElement GuardiansEmail;
+
+    @FindBy(xpath = "//input[@id='guardian_phone']")
+    public WebElement GuardiansPhone;
+
+    @FindBy(xpath = "//input[@id='hourly_fees']")
+    public WebElement HourlyFeesPeakHour;
+
+    @FindBy(xpath = "//select[@id='student_type']")
+    public WebElement StudentType;
 
 
-
-
-
-
-
-
-
+    public void EnterValidFirstName() { FirstName.sendKeys("George"); }
+    public void EnterValidLastName() { LastName.sendKeys("Cane"); }
+    public void EnterValidEmail() { Email.sendKeys("Georgecane@gmail.com"); }
+    public void EnterValidPhone(){Phone.sendKeys("7878787878");}
+    public void EnterValidBirthDate(){BirthDate.sendKeys("1990-03-20");}
+    public void EnterValidPostCode(){PostCode.sendKeys("se15 2ff");}
+    public void EnterValidAddress(){Address.sendKeys("1A Bermondsey Way");}
+    public void EnterValidGuardiansFirstName(){GuardiansFirstName.sendKeys("John");}
+    public void EnterValidGuardiansLastName(){GuardiansLastName.sendKeys("Cane");}
+    public void EnterValidGuardiansEmail(){GuardiansEmail.sendKeys("johncane@gmail.com");}
+    public void EnterValidGuardiansPhone(){GuardiansPhone.sendKeys("7979797979");}
+    public void EnterValidHourlyFeesPeakHour(){HourlyFeesPeakHour.sendKeys("15");}
 
 }
 
