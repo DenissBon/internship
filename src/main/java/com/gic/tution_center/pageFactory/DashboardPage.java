@@ -22,6 +22,9 @@ public class DashboardPage {
     @FindBy(xpath = "//*[@class='mm-students-entry']")
     public WebElement AddNewStudentBtn;
 
+    @FindBy(xpath = "//body/div[@id='app']/div[1]/div[2]/div[1]/div[4]/div[1]/ul[1]/li[11]/a[1]")
+    public WebElement ManageRoutineBtn;
+
     public void StudentsBtnClick()
     {
         StudentsBtn.click();
@@ -33,6 +36,8 @@ public class DashboardPage {
     }
 
     public void AllStudentsBtnClick(){AllStudentsBtn.click();}
+
+    public void ManageRoutineBtnClick(){ManageRoutineBtn.click();}
 
 
 
