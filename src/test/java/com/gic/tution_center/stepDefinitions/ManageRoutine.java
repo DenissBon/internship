@@ -92,11 +92,20 @@ public class ManageRoutine extends CommonFunctions {
         Assert.assertTrue(manageRoutinePage.SuccessMsg.isDisplayed());
 
     }
+    @When("^I click None Selected$")
+    public void i_click_None_Selected() {
+        manageRoutinePage.NoneSelectedBtn.click();
+    }
+
+    @When("^I click Full Week$")
+    public void i_click_Full_Week() {
+        manageRoutinePage.FullWeekBtn.click();
+    }
 
     @When("^I click Edit$")
     public void i_click_Edit() throws InterruptedException {
-        manageRoutinePage.ChooseDayBtn.click();
-        manageRoutinePage.FullWeekBtn.click();
+
+
         manageRoutinePage.EditBtn.click();
         Thread.sleep(5000);
 
@@ -121,6 +130,72 @@ public class ManageRoutine extends CommonFunctions {
     public void i_should_see_successful_update_message_received() {
 
         Assert.assertTrue(manageRoutinePage.EditSuccessMsg.isDisplayed());
+
+    }
+
+
+    @When("^I click student enrollment button$")
+    public void i_click_student_enrollment_button() {
+
+        manageRoutinePage.StudentEnrollmentBtnClick();
+
+    }
+
+    @When("^I enter new student name \"(.*?)\"$")
+    public void i_enter_new_student_name(String NewStudentName) {
+        manageRoutinePage.SelectStudentDropdownClick();
+        manageRoutinePage.EnterStudentField.sendKeys(NewStudentName);
+        manageRoutinePage.EnterStudentField.sendKeys(Keys.ENTER);
+
+    }
+
+    @When("^I click Save new student update$")
+    public void i_click_Save_new_student_update() throws InterruptedException {
+
+        Thread.sleep(5000);
+        manageRoutinePage.SaveEnrolledStudent.click();
+
+    }
+
+    @Then("^I should see successful enrollment message received$")
+    public void i_should_see_successful_enrollment_message_received()  {
+
+        Assert.assertTrue(manageRoutinePage.StudentEnrolledSuccessMsg.isDisplayed());
+
+    }
+
+    @When("^I enter second field student name \"(.*?)\"$")
+    public void i_enter_second_field_student_name(String SecondTeachersName) throws InterruptedException {
+
+        Thread.sleep(5000);
+        manageRoutinePage.AddSelectStudentField.click();
+        manageRoutinePage.SelectStudentSecondField.click();
+        manageRoutinePage.EnterStudentField.sendKeys(SecondTeachersName);
+        manageRoutinePage.EnterStudentField.sendKeys(Keys.ENTER);
+    }
+
+    @Then("^I should see Student Field warning message$")
+    public void i_should_see_Student_Field_warning_message() {
+        Assert.assertTrue(manageRoutinePage.StudentFieldWarningMessage.isDisplayed());
+
+    }
+
+    @When("^I click on delete student button$")
+    public void i_click_on_delete_student_button()  {
+        manageRoutinePage.DeleteStudentBtnClick();
+
+    }
+
+    @When("^I click ok$")
+    public void i_click_ok() {
+        manageRoutinePage.OkBtnWhenDeletingStudent.click();
+
+    }
+
+    @Then("^I should receive Successful Ofboarding Message$")
+    public void i_should_receive_Successful_Ofboarding_Message() {
+
+        Assert.assertTrue(manageRoutinePage.StudentOfboardedSuccessMsg.isDisplayed());
 
     }
 

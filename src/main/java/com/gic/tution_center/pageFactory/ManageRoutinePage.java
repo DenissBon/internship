@@ -67,7 +67,7 @@ public class ManageRoutinePage {
     public WebElement EditBtn;
 
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div[1]/span/div/button/span")
-    public WebElement ChooseDayBtn;
+    public WebElement NoneSelectedBtn;
 
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div[1]/div[1]/div/div[2]/div[1]/span/div/ul/li[1]/a/label")
     public WebElement FullWeekBtn;
@@ -75,7 +75,44 @@ public class ManageRoutinePage {
     @FindBy(xpath = "//body/div[@id='app']/div[@id='myModal']/div[1]/form[1]/div[1]/div[3]/button[1]")
     public WebElement EditTimeslotSaveBtn;
 
+    @FindBy(xpath = "//div[contains(text(),'Student Enrolled Successfully!')]")
+    public WebElement StudentEnrolledSuccessMsg;
+
+    @FindBy(xpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[3]/div[3]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[2]/a[1]/i[1]")
+    public WebElement StudentEnrollmentBtn;
+
+    public void StudentEnrollmentBtnClick(){StudentEnrollmentBtn.click();}
+
+    @FindBy(xpath = "//body/div[@id='app']/div[@id='myModal']/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/span[1]/span[1]")
+    public WebElement SelectStudentDropdown;
+
+    public void SelectStudentDropdownClick(){SelectStudentDropdown.click();}
+
+    @FindBy(xpath = "//body/span[1]/span[1]/span[1]/input[1]")
+    public WebElement EnterStudentField;
+
+    @FindBy(xpath = "//body/div[@id='app']/div[@id='myModal']/div[1]/form[1]/div[1]/div[3]/button[1]")
+    public WebElement SaveEnrolledStudent;
+
+    @FindBy(xpath = "//*[@id='student_entry_block']/div[2]/div/div/a/i")
+    public WebElement DeleteStudentBtn;
+
+    public void DeleteStudentBtnClick(){DeleteStudentBtn.click();}
+
+    @FindBy(xpath = "//button[contains(text(),'OK')]")
+    public WebElement OkBtnWhenDeletingStudent;
+
+    @FindBy(xpath = "//div[contains(text(),'Student ofboarded successfully!')]")
+    public WebElement StudentOfboardedSuccessMsg;
+
+    @FindBy(xpath = "//body/div[@id='app']/div[@id='myModal']/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/i[1]")
+   public WebElement AddSelectStudentField;
 
 
+   @FindBy(xpath = "//body/div[@id='app']/div[@id='myModal']/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/span[1]/span[1]/span[1]")
+    public WebElement SelectStudentSecondField;
+
+   @FindBy(xpath = "//p[contains(text(),'The Student field is required.')]")
+   public WebElement StudentFieldWarningMessage;
 
 }
